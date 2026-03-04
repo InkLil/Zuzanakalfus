@@ -89,7 +89,7 @@ ul, ol { list-style: none; }
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -292,7 +292,7 @@ h3 {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  font-size: clamp(5rem, 15vw, 14rem);
+  font-size: clamp(4rem, 9.5vw, 9.5rem);
   font-weight: 300;
   letter-spacing: -0.055em;
   line-height: 0.9;
@@ -1107,7 +1107,8 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   .clients-row { grid-template-columns: 1fr 1fr; }
   .clients-year { display: none; }
   .process-item { grid-template-columns: 60px 1fr; }
-  .footer-inner { flex-direction: column; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-nav { flex-wrap: wrap; }
   .footer-nav { gap: 2rem; }
 }
 
@@ -1147,8 +1148,8 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
 .all-projects .btn,
 .process-header,
 .process-item,
-.reviews-header,
-.review-card,
+.reviews-layout,
+.review-slide,
 .about-copy,
 .about-media,
 .cta-sub,
@@ -1187,6 +1188,7 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   .clients-row:not(.clients-row--head),
   .all-projects .btn,
   .process-header, .process-item,
+  .reviews-layout, .review-slide,
   .about-copy, .about-media,
   .cta-sub, .cta-display, .cta-lead, .cta-actions {
     animation: none;
