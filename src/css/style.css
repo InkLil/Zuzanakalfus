@@ -1,4 +1,15 @@
 /* ============================================
+   FONT
+   ============================================ */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
    TOKENS
    ============================================ */
 :root {
@@ -52,7 +63,9 @@ a, button, [type="submit"] { cursor: none; }
    RESET
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+section[id] { scroll-margin-top: 90px; }
 
 body {
   background: var(--bg);
@@ -270,7 +283,7 @@ h3 {
 .brand { display: flex; align-items: center; }
 .brand-logo { height: 26px; width: auto; display: block; }
 
-.nav { display: flex; align-items: center; gap: 2.5rem; margin-left: auto; }
+.nav { display: none; align-items: center; gap: 2.5rem; margin-left: auto; }
 .nav a {
   font-size: 0.875rem;
   font-weight: 400;
@@ -1062,6 +1075,72 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   line-height: 1.5;
 }
 
+/* ─── Hamburger toggle ────────────────────────────── */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 4px;
+  margin-left: auto;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Mobile nav ──────────────────────────────────── */
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  top: 60px;
+  z-index: 90;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem var(--pad-x);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-mobile.is-open {
+  transform: translateX(0);
+}
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.nav-mobile-links a {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.nav-mobile-links a:hover { color: var(--accent); }
+.nav-mobile-links .btn {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+/* ─── Desktop: skryj hamburger, zobraz nav ─────────── */
+@media (min-width: 641px) {
+  .nav { display: flex; }
+  .nav-toggle { display: none; }
+  .header-inner > .btn { display: inline-flex; }
+}
+
 /* ============================================
    RESPONSIVE — 1024px
    ============================================ */
@@ -1086,8 +1165,6 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
    ============================================ */
 @media (max-width: 640px) {
   body { font-size: 1.125rem; }
-  .nav { display: none; }
-  .nav-toggle { display: flex; }
   .header-inner > .btn { display: none; }
   .hero-media { display: none; }
 
@@ -1182,65 +1259,6 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
 }
 .site-header.is-scrolled {
   box-shadow: 0 1px 24px rgba(0, 0, 0, 0.06);
-}
-
-/* ─── Hamburger toggle ────────────────────────────── */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  cursor: none;
-  padding: 4px;
-  margin-left: auto;
-}
-.nav-toggle span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
-.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ─── Mobile nav ──────────────────────────────────── */
-.nav-mobile {
-  position: fixed;
-  inset: 0;
-  top: 60px;
-  z-index: 90;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  padding: 2.5rem var(--pad-x);
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.nav-mobile.is-open {
-  transform: translateX(0);
-}
-.nav-mobile-links {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.nav-mobile-links a {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--text);
-  transition: color 0.2s;
-}
-.nav-mobile-links a:hover { color: var(--accent); }
-.nav-mobile-links .btn {
-  align-self: flex-start;
-  margin-top: 1rem;
 }
 
 /* ─── Footer logo fix ─────────────────────────────── */

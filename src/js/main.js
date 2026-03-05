@@ -1,3 +1,16 @@
+// ─── Anchor scroll offset ────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    const offset = document.querySelector('.site-header').offsetHeight + 24;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
 // ─── Custom cursor ───────────────────────────────────
 const cursor = document.getElementById('cursor');
 
