@@ -17,8 +17,18 @@
   <meta property="og:locale" content="cs_CZ">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Google Analytics 4 — Consent Mode v2 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZYRGXG5FE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { analytics_storage: 'denied', wait_for_update: 500 });
+    gtag('js', new Date());
+    gtag('config', 'G-CZYRGXG5FE');
+  </script>
+
   <link rel="preload" href="src/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="src/css/style.css?v=15">
+  <link rel="stylesheet" href="src/css/style.css?v=16">
 
   <script type="application/ld+json">
   {
@@ -502,6 +512,18 @@
     <button class="lightbox-close" id="lightbox-close" aria-label="Zavřít">&times;</button>
     <div class="lightbox-inner">
       <img src="" alt="" id="lightbox-img">
+    </div>
+  </div>
+
+  <!-- Cookie consent -->
+  <div class="cookie-bar" id="cookie-bar" aria-live="polite" role="region" aria-label="Souhlas s cookies">
+    <p class="cookie-bar__text">
+      Používáme analytické cookies (Google Analytics), abychom zjistili, co na webu funguje.
+      Žádné reklamy, žádné sledování třetích stran.
+    </p>
+    <div class="cookie-bar__actions">
+      <button class="cookie-bar__btn cookie-bar__btn--accept" id="cookie-accept">Přijmout</button>
+      <button class="cookie-bar__btn cookie-bar__btn--decline" id="cookie-decline">Odmítnout</button>
     </div>
   </div>
 

@@ -185,3 +185,33 @@ document.querySelectorAll('.preview-btn').forEach(btn => {
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// ─── Cookie consent ───────────────────────────────────
+(function () {
+  const bar     = document.getElementById('cookie-bar');
+  const accept  = document.getElementById('cookie-accept');
+  const decline = document.getElementById('cookie-decline');
+  const KEY     = 'cookie_consent';
+
+  const stored = localStorage.getItem(KEY);
+
+  if (stored === 'granted') {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    return;
+  }
+
+  if (!stored) {
+    setTimeout(() => bar.classList.add('is-visible'), 600);
+  }
+
+  function dismiss(choice) {
+    localStorage.setItem(KEY, choice);
+    bar.classList.remove('is-visible');
+    if (choice === 'granted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  }
+
+  accept.addEventListener('click',  () => dismiss('granted'));
+  decline.addEventListener('click', () => dismiss('denied'));
+})();
