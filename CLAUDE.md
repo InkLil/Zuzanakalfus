@@ -12,7 +12,7 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 ## File Structure
 
 - `index.html` — single page, all sections
-- `src/css/style.css` — all styles (current: v=15)
+- `src/css/style.css` — all styles (current: v=16)
 - `src/js/main.js` — vanilla JS (current: v=2)
 - `src/fonts/Satoshi-Variable.woff2` — self-hosted variable font
 - `assets/logo/` — logos (dark/light variants + favicon logo-mark_03.jpg)
@@ -69,6 +69,14 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 - Hero display text entrance animation (CSS keyframes)
 - Infinite marquee (CSS animation, pauses on hover)
 - Lightbox for project screenshots
+- Cookie consent bar (floating card, bottom-right) — GDPR, Consent Mode v2, localStorage `cookie_consent`
+
+## Analytics & Cookie Consent
+
+- **GA4 Measurement ID**: `G-CZYRGXG5FE`
+- **Consent Mode v2**: analytics_storage defaultně `denied`, update na `granted` po kliknutí Přijmout
+- **Cookie karta**: floating card vpravo dole, animace fade+slide, 2 tlačítka (Přijmout / Odmítnout)
+- Souhlas uložen v `localStorage` pod klíčem `cookie_consent` (`granted` / `denied`)
 
 ## SEO
 
