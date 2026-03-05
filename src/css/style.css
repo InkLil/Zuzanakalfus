@@ -1072,7 +1072,7 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
 @media (max-width: 1024px) {
   .hero-display { font-size: clamp(4rem, 12vw, 9rem); }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-media { min-height: 400px; }
+  .hero-media { display: none; }
   .brand-grid { grid-template-columns: 1fr; }
   .services-header { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
