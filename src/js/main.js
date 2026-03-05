@@ -17,6 +17,26 @@ document.querySelectorAll('a, button, [type="submit"]').forEach(el => {
   el.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
 });
 
+// ─── Mobile nav ──────────────────────────────────────
+const navToggle  = document.getElementById('nav-toggle');
+const navMobile  = document.getElementById('nav-mobile');
+
+function toggleNav(open) {
+  navToggle.classList.toggle('is-open', open);
+  navMobile.classList.toggle('is-open', open);
+  navToggle.setAttribute('aria-expanded', open);
+  navMobile.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+navToggle.addEventListener('click', () => {
+  toggleNav(!navMobile.classList.contains('is-open'));
+});
+
+navMobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => toggleNav(false));
+});
+
 // ─── Year ───────────────────────────────────────────
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -30,8 +50,7 @@ const ANIMATED = [
   '.service-card',
   '.work-row',
   '.work-section .section-display',
-  '.clients-row:not(.clients-row--head)',
-  '.all-projects .btn',
+  '.work-all-projects .btn',
   '.process-header',
   '.process-item',
   '.reviews-layout',
