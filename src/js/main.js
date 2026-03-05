@@ -1,3 +1,19 @@
+// ─── Custom cursor ───────────────────────────────────
+const cursor = document.getElementById('cursor');
+
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
+  cursor.style.opacity = '1';
+});
+
+document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+
+document.querySelectorAll('a, button, [type="submit"]').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
+});
+
 // ─── Mobile nav ──────────────────────────────────────
 const navToggle  = document.getElementById('nav-toggle');
 const navMobile  = document.getElementById('nav-mobile');
