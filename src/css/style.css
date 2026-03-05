@@ -1101,7 +1101,7 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
     padding-top: 3.25rem;
     padding-bottom: 3.25rem;
   }
-  .hero-display { font-size: clamp(3.5rem, 18vw, 6rem); flex-direction: column; gap: 0; }
+  .hero-display { font-size: clamp(2.5rem, 14vw, 5rem); flex-direction: column; gap: 0; }
   .services-grid { grid-template-columns: 1fr; border-left: none; }
   .service-card { border-right: none; border-bottom: 1px solid var(--border); }
   .clients-row { grid-template-columns: 1fr 1fr; }
