@@ -1104,8 +1104,8 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   }
   .hero-display { font-size: clamp(2.5rem, 14vw, 5rem); flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
   .hero-copy { gap: 1.25rem; padding-bottom: 1.5rem; }
-  .hero-services-list { gap: 0.5rem; }
-  .hero-services-list li { flex: 1 1 100%; }
+  .hero-services-list { flex-direction: column; gap: 0.5rem; }
+  .hero-services-list li { width: 100%; }
   .btn { font-size: 1.125rem; padding: 1.125rem 2rem; }
   .marquee-section--logos { padding: 1rem 0; }
   .services-header { margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
