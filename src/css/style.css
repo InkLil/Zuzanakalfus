@@ -19,36 +19,6 @@
 }
 
 /* ============================================
-   CUSTOM CURSOR
-   ============================================ */
-.cursor {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.12s ease, width 0.25s ease, height 0.25s ease, opacity 0.3s ease;
-  opacity: 0;
-}
-
-.cursor.is-active {
-  width: 60px;
-  height: 60px;
-  background: rgba(239, 13, 51, 0.1);
-}
-
-body { cursor: none; }
-a, button, [type="submit"] { cursor: none; }
-
-@media (hover: none) {
-  .cursor { display: none; }
-  body, a, button { cursor: auto; }
-}
-
-/* ============================================
    RESET
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1088,6 +1058,7 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   body { font-size: 1.125rem; }
   .nav { display: none; }
   .nav-toggle { display: flex; }
+  .header-inner > .btn { display: none; }
   .hero-media { display: none; }
 
   .hero,
@@ -1101,10 +1072,13 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
     padding-top: 3.25rem;
     padding-bottom: 3.25rem;
   }
-  .hero-display { font-size: clamp(2.5rem, 14vw, 5rem); flex-direction: column; gap: 0; }
-  .hero-copy { gap: 1.25rem; padding-bottom: 3.5rem; }
-  .hero-services-list li { flex: 1 1 calc(50% - 0.625rem); }
-  .btn { font-size: 1rem; padding: 1rem 1.75rem; }
+  .hero-display { font-size: clamp(2.5rem, 14vw, 5rem); flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
+  .hero-copy { gap: 1.25rem; padding-bottom: 1.5rem; }
+  .hero-services-list { gap: 0.5rem; }
+  .hero-services-list li { flex: 1 1 100%; }
+  .btn { font-size: 1.125rem; padding: 1.125rem 2rem; }
+  .marquee-section--logos { padding: 1rem 0; }
+  .services-header { margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
   .services-grid { grid-template-columns: 1fr; border-left: none; }
   .service-card { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
   .process-header { margin-bottom: 1.5rem; }

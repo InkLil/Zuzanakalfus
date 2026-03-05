@@ -1,22 +1,3 @@
-// ─── Custom cursor ───────────────────────────────────
-const cursor = document.getElementById('cursor');
-let cx = 0, cy = 0;
-
-document.addEventListener('mousemove', e => {
-  cx = e.clientX;
-  cy = e.clientY;
-  cursor.style.left = cx + 'px';
-  cursor.style.top  = cy + 'px';
-  cursor.style.opacity = '1';
-});
-
-document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
-
-document.querySelectorAll('a, button, [type="submit"]').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
-});
-
 // ─── Mobile nav ──────────────────────────────────────
 const navToggle  = document.getElementById('nav-toggle');
 const navMobile  = document.getElementById('nav-mobile');
@@ -170,8 +151,6 @@ function closeLightbox() {
 
 document.querySelectorAll('.preview-btn').forEach(btn => {
   btn.addEventListener('click', () => openLightbox(btn.dataset.src, btn.dataset.alt));
-  btn.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
-  btn.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
