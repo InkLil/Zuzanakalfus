@@ -98,8 +98,11 @@
     <section class="brand-section">
       <div class="container">
         <div class="brand-grid">
-          <div class="brand-media">
-            <img src="assets/images/screencapture-bitemarksmedia-2026-03-04-11_46_29.png" alt="Bite Marks Media — ukázka projektu" class="brand-photo">
+          <div class="brand-media-group">
+            <div class="brand-media">
+              <img src="assets/images/screenshot-bitemarksmedia.webp" alt="Bite Marks Media — ukázka projektu" class="brand-photo">
+            </div>
+            <button class="preview-btn" data-src="assets/images/screenshot-bitemarksmedia.webp" data-alt="Bite Marks Media">Prohlédnout &rarr;</button>
           </div>
           <div class="brand-copy">
             <p class="section-index">—</p>
@@ -115,8 +118,11 @@
       <div class="container">
         <div class="services-header">
           <h2 class="section-display">Služby</h2>
-          <div class="services-media">
-            <img src="assets/images/screencapture-youngtravelconcierge-2026-03-04-11_47_01.png" alt="Young Travel Concierge — ukázka projektu" class="services-photo">
+          <div class="services-media-group">
+            <div class="services-media">
+              <img src="assets/images/screenshot-youngtravelconcierge.webp" alt="Young Travel Concierge — ukázka projektu" class="services-photo">
+            </div>
+            <button class="preview-btn" data-src="assets/images/screenshot-youngtravelconcierge.webp" data-alt="Young Travel Concierge">Prohlédnout &rarr;</button>
           </div>
         </div>
         <div class="services-grid">
@@ -473,6 +479,14 @@
       </nav>
     </div>
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zavřít">&times;</button>
+    <div class="lightbox-inner">
+      <img src="" alt="" id="lightbox-img">
+    </div>
+  </div>
 
   <script src="src/js/main.js" defer></script>
 
