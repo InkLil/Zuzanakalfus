@@ -84,7 +84,8 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 - Title: `Zuzana Kalfus — Webdesign & WordPress | Liberec`
 - Description: `Webdesign a WordPress na míru v Liberci a celé ČR. Tvořím přehledné weby pro podnikatele a malé firmy — čisté, funkční a dlouhodobě udržitelné.`
 - Canonical: `https://zuzanakalfus.cz`
-- OG tags: complete (og:title, og:description, og:image absolute URL, og:url, og:type, og:locale)
+- OG tags: complete (og:title, og:description, og:image absolute URL + width 1200 + height 630, og:url, og:type, og:locale)
+- OG image: `assets/images/og-image.png` — 1200×630px, dark bg, Zuzana Kalfus + tagline + logo z—k + zuzanakalfus.cz
 - Schema.org JSON-LD: ProfessionalService (name, url, address Liberec, telephone, email, sameAs)
 - Google Search Console: verified, sitemap submitted
 - Google Business Profile: verified, NAP consistent
