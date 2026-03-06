@@ -12,7 +12,7 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 ## File Structure
 
 - `index.html` — single page, all sections
-- `src/css/style.css` — all styles (current: v=16)
+- `src/css/style.css` — all styles (current: v=17)
 - `src/js/main.js` — vanilla JS (current: v=2)
 - `src/fonts/Satoshi-Variable.woff2` — self-hosted variable font
 - `assets/logo/` — logos (dark/light variants + favicon logo-mark_03.jpg)
@@ -23,7 +23,7 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 - `docs/` — brand-brief.md, design-system.md, projects.md, layout-rules.md
 - `src/components/ui-components.md` — component library reference
 - `robots.txt` — allows all, links to sitemap
-- `sitemap.xml` — single URL, lastmod 2026-03-05
+- `sitemap.xml` — single URL, lastmod 2026-03-06
 
 ## Design System
 
@@ -43,18 +43,19 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 ## Page Sections (top to bottom)
 
 1. Site Header — sticky, logo + nav (right-aligned) + CTA btn
-2. Hero — "TVORBA WEBŮ" display + grid (copy + profile_02.webp), glass pill services list
+2. Hero — "TVORBA WEBŮ" display + grid (copy + profile_02.webp), glass pill services list + Google rating (★★★★★ 5,0)
 3. Tech logo marquee — SVG logos scrolling (WordPress, HTML5, CSS3, Figma, JS, PHP, Elementor, WooCommerce, Claude AI)
-4. Brand section — bitemarksmedia.com screenshot (WebP) + copy (scroll preview on hover)
-5. Services — section-display + youngtravelconcierge.com screenshot (WebP) + 4 cards
+4. Brand section — `.project-label` štítek + bitemarksmedia.com screenshot (WebP) + copy (scroll preview on hover)
+5. Services — section-display + 4 cards + `.project-label` štítek + youngtravelconcierge.com screenshot (WebP)
 6. Selected Work — 3 projects asymmetric grid (LeadAgent, Léto v USA, Martin Easy Production), all WebP
-7. All Projects btn → bezlimituweb.cz/portfolio/
-8. Process — 4 steps
-9. Reviews — slider (left: heading + Google link, right: 4 reviews + arrow controls)
-10. Client logo marquee — 13 client logos scrolling
-11. About — two-column (copy + stat bubbles + CTA btn | contact form via Formspree)
-12. CTA — dark, "Připraveni začít?" + "Pojďme TVOŘIT"
-13. Footer — dark, logo + 4 nav columns (Kontakt, Fakturační údaje, Sociální sítě, Často hledané)
+7. Claim section — citát „Můj styl je minimalismus..." centrovaný, font-weight 300
+8. All Projects btn → bezlimituweb.cz/portfolio/
+9. Process — 4 steps
+10. Reviews — slider (left: heading + Google link, right: 4 reviews + arrow controls)
+11. Client logo marquee — 13 client logos scrolling
+12. About — two-column (copy + stat bubbles + CTA btn | contact form via Formspree)
+13. CTA — dark, "Připraveni začít?" + "Pojďme TVOŘIT" (p, not h2)
+14. Footer — dark, logo + 4 nav columns (Kontakt, Fakturační údaje, Sociální sítě, Často hledané)
 
 ## Key JS Features
 
