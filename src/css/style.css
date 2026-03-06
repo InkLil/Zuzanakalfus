@@ -237,6 +237,15 @@ h3 {
   transform: translateY(-14px);
 }
 
+.project-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
 .brand-media {
   overflow: hidden;
   aspect-ratio: 3 / 4;
@@ -257,6 +266,25 @@ h3 {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* ============================================
+   CLAIM
+   ============================================ */
+.claim-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.claim-text {
+  font-size: clamp(1.75rem, 4vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* ============================================
@@ -328,6 +356,18 @@ h3 {
   gap: 2rem;
   padding-bottom: clamp(3rem, 6vw, 5rem);
   align-items: flex-start;
+}
+
+.hero-rating {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: -0.5rem;
+  white-space: nowrap;
+}
+
+.hero-stars {
+  color: #F5C518 !important;
+  letter-spacing: 0.05em;
 }
 
 .hero-services-list {
@@ -467,13 +507,13 @@ h3 {
    SERVICES
    ============================================ */
 .services-section {
-  padding: clamp(5rem, 10vw, 9rem) 0;
+  padding: clamp(5rem, 10vw, 9rem) 0 clamp(3rem, 5vw, 5rem);
   border-bottom: 1px solid var(--border);
 }
 
 .services-header {
-  margin-bottom: clamp(3rem, 6vw, 5rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -482,6 +522,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-left: 1px solid var(--border);
+  margin-bottom: 3rem;
 }
 
 .service-card {
@@ -1148,7 +1189,7 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   .hero-display { font-size: clamp(4rem, 12vw, 9rem); }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-media { display: none; }
-  .brand-grid { grid-template-columns: 1fr; }
+  .brand-grid { grid-template-columns: 1fr; gap: 2rem; }
   .brand-copy { order: -1; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .work-row--a,
@@ -1169,7 +1210,6 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   .hero-media { display: none; }
 
   .hero,
-  .brand-section,
   .services-section,
   .work-section,
   .process-section,
@@ -1177,6 +1217,10 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   .about-section,
   .cta-section {
     padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+  .brand-section {
+    padding-top: 2rem;
     padding-bottom: 3.25rem;
   }
   .hero-display { font-size: clamp(2.5rem, 14vw, 5rem); flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
@@ -1274,7 +1318,7 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
 
 /* ─── Services media standalone ──────────────────── */
 .services-media-group {
-  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
 }
 
 /* ─── About form subtext ──────────────────────────── */
