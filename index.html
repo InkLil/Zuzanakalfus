@@ -7,16 +7,20 @@
   <meta name="description" content="Webdesign a WordPress na míru v Liberci a celé ČR. Tvořím přehledné weby pro podnikatele a malé firmy — čisté, funkční a dlouhodobě udržitelné.">
 
   <link rel="icon" type="image/png" href="assets/logo/logo-mark_03.jpg">
-  <link rel="canonical" href="https://zuzanakalfus.cz">
+  <link rel="canonical" href="https://zuzanakalfus.cz/">
+  <link rel="alternate" hreflang="cs" href="https://zuzanakalfus.cz/">
+  <link rel="alternate" hreflang="en" href="https://zuzanakalfus.cz/en/">
+  <link rel="alternate" hreflang="x-default" href="https://zuzanakalfus.cz/">
 
   <meta property="og:title" content="Zuzana Kalfus — Webdesign &amp; WordPress | Liberec">
   <meta property="og:description" content="Webdesign a WordPress na míru v Liberci a celé ČR. Přehledné weby pro podnikatele a malé firmy.">
   <meta property="og:image" content="https://zuzanakalfus.cz/assets/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://zuzanakalfus.cz">
+  <meta property="og:url" content="https://zuzanakalfus.cz/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Google Analytics 4 — Consent Mode v2 -->
@@ -30,7 +34,7 @@
   </script>
 
   <link rel="preload" href="src/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="src/css/style.css?v=17">
+  <link rel="stylesheet" href="src/css/style.css?v=18">
 
   <script type="application/ld+json">
   {
@@ -77,6 +81,10 @@
         <a href="#o-mne">O mně</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
+      <div class="lang-switcher">
+        <span class="lang-active" aria-current="page">CS</span>
+        <a href="/en/" hreflang="en" lang="en">EN</a>
+      </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -95,6 +103,10 @@
       <a href="#o-mne">O mně</a>
       <a href="#kontakt">Kontakt</a>
       <a class="btn btn-primary" href="#kontakt">Chci web</a>
+      <div class="lang-switcher lang-switcher--mobile">
+        <span class="lang-active" aria-current="page">CS</span>
+        <a href="/en/" hreflang="en" lang="en">EN</a>
+      </div>
     </nav>
   </div>
 
@@ -538,6 +550,7 @@
     </div>
   </div>
 
+  <script src="src/js/lang-detect.js" defer></script>
   <script src="src/js/main.js?v=2" defer></script>
 
 </body>

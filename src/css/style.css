@@ -1490,6 +1490,131 @@ a.clients-row:hover { background: var(--bg-soft); padding-left: 1rem; }
   .cookie-bar__btn { cursor: auto; }
 }
 
+/* ============================================
+   LANG SWITCHER
+   ============================================ */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.lang-switcher .lang-active {
+  color: var(--accent);
+}
+
+.lang-switcher a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.lang-switcher a:hover {
+  color: var(--text);
+}
+
+.lang-switcher .lang-active::after,
+.lang-switcher a::before {
+  content: "/";
+  margin: 0 0.25rem;
+  color: var(--border);
+  font-weight: 400;
+}
+
+.lang-switcher .lang-active::after { display: none; }
+.lang-switcher a::before { content: "/"; }
+
+/* Mobile lang-switcher inside nav-mobile — skryj v headeru na mobilu */
+@media (max-width: 1023px) {
+  .site-header .lang-switcher:not(.lang-switcher--mobile) {
+    display: none;
+  }
+}
+
+.lang-switcher--mobile {
+  margin-top: 0.5rem;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   LANG BANNER
+   ============================================ */
+.lang-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 8900;
+  background: #111110;
+  border: 1px solid #333331;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  max-width: 300px;
+  width: calc(100vw - 3rem);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  animation: langBannerIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes langBannerIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lang-banner p {
+  margin: 0 0 1rem;
+  font-size: 0.825rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.lang-banner p strong {
+  color: var(--text);
+}
+
+.lang-banner__actions {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.lang-banner__accept {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.lang-banner__accept:hover {
+  background: #c8002a;
+}
+
+.lang-banner__dismiss {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.775rem;
+  font-family: var(--font);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.lang-banner__dismiss:hover {
+  color: var(--text);
+}
+
+@media (hover: none) {
+  .lang-banner__accept,
+  .lang-banner__dismiss { cursor: auto; }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-display span,
