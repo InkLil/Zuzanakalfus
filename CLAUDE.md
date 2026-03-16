@@ -11,19 +11,21 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 
 ## File Structure
 
-- `index.html` — single page, all sections
-- `src/css/style.css` — all styles (current: v=17)
+- `index.html` — single page, all sections (Czech, default)
+- `en/index.html` — English version (same structure, translated copy, `../` asset paths)
+- `src/css/style.css` — all styles (current: v=18)
 - `src/js/main.js` — vanilla JS (current: v=2)
+- `src/js/lang-detect.js` — browser language detection, EN banner for non-CS/SK visitors (only loaded on CS index.html)
 - `src/fonts/Satoshi-Variable.woff2` — self-hosted variable font
-- `assets/logo/` — logos (dark/light variants + favicon logo-mark_03.jpg)
+- `assets/logo/` — logos (dark/light variants + favicon logo-mark_03.png)
 - `assets/images/` — profile photos (WebP), project screenshots (WebP), og-image
 - `assets/images/projects/` — project mockup images (3 projects, all WebP)
 - `assets/images/logo_clients/` — client logos for marquee (webp/png/svg)
 - `assets/images/logo_tech/` — tech logos SVG downloaded from simpleicons.org
-- `docs/` — brand-brief.md, design-system.md, projects.md, layout-rules.md
+- `docs/` — brand-brief.md, design-system.md, projects.md, layout-rules.md, multilingual-implementation-plan.md
 - `src/components/ui-components.md` — component library reference
 - `robots.txt` — allows all, links to sitemap
-- `sitemap.xml` — single URL, lastmod 2026-03-06
+- `sitemap.xml` — multilingual, 2 URLs (CS + EN) s xhtml:link hreflang, lastmod 2026-03-16
 
 ## Design System
 
@@ -42,7 +44,7 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 
 ## Page Sections (top to bottom)
 
-1. Site Header — sticky, logo + nav (right-aligned) + CTA btn
+1. Site Header — sticky, logo + nav (right-aligned) + lang-switcher (CS/EN) + CTA btn
 2. Hero — "TVORBA WEBŮ" display + grid (copy + profile_02.webp), glass pill services list + Google rating (★★★★★ 5,0)
 3. Tech logo marquee — SVG logos scrolling (WordPress, HTML5, CSS3, Figma, JS, PHP, Elementor, WooCommerce, Claude AI)
 4. Brand section — `.project-label` štítek + bitemarksmedia.com screenshot (WebP) + copy (scroll preview on hover)
@@ -71,6 +73,7 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 - Infinite marquee (CSS animation, pauses on hover)
 - Lightbox for project screenshots
 - Cookie consent bar (floating card, bottom-right) — GDPR, Consent Mode v2, localStorage `cookie_consent`
+- Language detection banner (floating card, bottom-left) — zobrazí se nečesky mluvícím návštěvníkům po 1,5 s, localStorage `lang_preference`
 
 ## Analytics & Cookie Consent
 
@@ -81,12 +84,23 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 
 ## SEO
 
+### Česká verze (index.html)
 - Title: `Zuzana Kalfus — Webdesign & WordPress | Liberec`
 - Description: `Webdesign a WordPress na míru v Liberci a celé ČR. Tvořím přehledné weby pro podnikatele a malé firmy — čisté, funkční a dlouhodobě udržitelné.`
-- Canonical: `https://zuzanakalfus.cz`
-- OG tags: complete (og:title, og:description, og:image absolute URL + width 1200 + height 630, og:url, og:type, og:locale)
-- OG image: `assets/images/og-image.png` — 1200×630px, dark bg, Zuzana Kalfus + tagline + logo z—k + zuzanakalfus.cz
-- Schema.org JSON-LD: ProfessionalService (name, url, address Liberec, telephone, email, sameAs)
+- Canonical: `https://zuzanakalfus.cz/`
+- OG tags: complete + `og:locale:alternate` = `en_US`
+- Schema.org JSON-LD: ProfessionalService (CS)
+
+### Anglická verze (en/index.html)
+- Title: `Zuzana Kalfus — Web Design & WordPress | Czech Republic`
+- Description: `Custom web design and WordPress development from the Czech Republic. Clean, functional websites for entrepreneurs and small businesses — built to last.`
+- Canonical: `https://zuzanakalfus.cz/en/`
+- OG tags: `og:locale` = `en_US`, `og:locale:alternate` = `cs_CZ`
+- Schema.org JSON-LD: ProfessionalService (EN), areaServed rozšířeno
+
+### Společné
+- Hreflang: `cs`, `en`, `x-default` — reciproční, absolutní URL, self-referencing ✅
+- OG image: `assets/images/og-image.png` — 1200×630px (sdílený pro obě verze)
 - Google Search Console: verified, sitemap submitted
 - Google Business Profile: verified, NAP consistent
 
@@ -97,9 +111,10 @@ Hosting: Webkitty (CDN Edge Caching — Development Mode needed after each index
 
 ## Hosting — Webkitty
 
-- CDN Edge Caching: after uploading index.html, enable **Development Mode** in CDN panel
+- CDN Edge Caching: after uploading index.html or en/index.html, enable **Development Mode** in CDN panel
 - FTP upload: always DELETE old file first, then upload new — file manager creates duplicates otherwise
 - Cache busting: CSS uses `?v=N`, JS uses `?v=N` on script tag
+- EN verze: `en/index.html` používá `../` prefix pro všechny cesty k assets a src
 
 ## Contact & Business
 
